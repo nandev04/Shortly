@@ -1,0 +1,57 @@
+.generalContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 100%;
+  margin: auto 0;
+  margin-top: 60px;
+}
+
+.wave {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: url('../assets/images/wave.svg') no-repeat center;
+  background-size: 100%;
+  background-position: bottom;
+  background-color: #4a406b;
+  width: 100%;
+  max-width: 1000px;
+  height: 130px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 60px;
+}
+
+.containerInput {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 20px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.inputLink {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.inputLink::placeholder {
+  font-family: var(--primary-font);
+  color: var(--grayish-violet);
+}
+
+.buttonLink {
+  box-sizing: border-box;
+  color: white;
+  font-family: var(--primary-font);
+  font-weight: 700;
+  background-color: var(--cyan);
+  border: none;
+  border-radius: 5px;
+  padding: 0 20px;
+}
