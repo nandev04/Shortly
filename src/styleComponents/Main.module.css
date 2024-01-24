@@ -1,0 +1,42 @@
+.mainContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.infoContainer {
+  max-width: 400px;
+  height: 100%;
+}
+
+.slogan {
+  font-family: var(--primary-font);
+  font-size: 3.2rem;
+  color: var(--very-dark-violet);
+}
+
+.infoDescription {
+  font-family: var(--primary-font);
+  font-size: 0.9rem;
+  grid-column: 1/2;
+  color: var(--grayish-violet);
+}
+
+.getStarted {
+  border: none;
+  background-color: var(--cyan);
+  font-family: var(--primary-font);
+  font-weight: 700;
+  color: white;
+  margin-top: 20px;
+  padding: 7px 25px;
+  border-radius: 20px;
+}
+
+.imageWorking {
+  justify-self: end;
+  grid-column: 2/2;
+  margin-right: -130px;
+  max-height: 320px;
+}

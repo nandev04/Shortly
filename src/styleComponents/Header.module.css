@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigationButtons {
+  display: flex;
+}
+
+.navigationButtons > li {
+  margin: 0px 25px;
+  font-family: var(--primary-font);
+  color: hsl(257, 7%, 63%);
+}
+
+.logoSite {
+  font-family: var(--primary-font);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: hsl(260, 8%, 14%);
+  margin-right: 20px;
+}
+
+.login {
+  border: none;
+  margin-right: 20px;
+  background: none;
+  font-family: var(--primary-font);
+  font-weight: 500;
+  color: var(--grayish-violet);
+}
+
+.SignUp {
+  font-size: var(--primary-font);
+  font-weight: 700;
+  color: white;
+  font-size: 12px;
+  border: none;
+  background-color: var(--cyan);
+  padding: 10px;
+  border-radius: 20px;
+}
