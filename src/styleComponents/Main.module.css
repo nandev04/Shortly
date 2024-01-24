@@ -1,9 +1,8 @@
 .mainContainer {
-  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 60px;
-  width: calc(100vw - 150px);
+  width: 100%;
 }
 
 .infoContainer {
@@ -11,13 +10,13 @@
   height: 100%;
 }
 
-.slogan {
+.sloganTitle {
   font-family: var(--primary-font);
   font-size: 3.8rem;
   color: var(--very-dark-violet);
 }
 
-.infoDescription {
+.sloganDescription {
   font-family: var(--primary-font);
   font-size: 0.9rem;
   grid-column: 1/2;
@@ -40,4 +39,35 @@
   grid-column: 2/2;
   margin-right: -60px;
   max-height: 400px;
+}
+
+.advancedConteiner {
+  position: absolute;
+  box-sizing: border-box;
+  right: 0;
+  margin-top: -65px;
+  z-index: -1;
+  width: 100vw;
+  background-color: #eff1f7;
+}
+
+.advancedStatistics {
+  display: grid;
+  width: 460px;
+  margin: 0 auto;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.advancedTitle {
+  margin-top: 50px;
+  font-family: var(--primary-font);
+  font-weight: 700;
+  color: var(--very-dark-violet);
+  font-size: 2rem;
+}
+
+.advancedInfo {
+  font-family: var(--primary-font);
+  color: var(--grayish-violet);
 }
