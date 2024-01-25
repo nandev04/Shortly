@@ -1,23 +1,26 @@
 .mainContainer {
-  overflow: hidden;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-width: 1440px;
+  margin: 0 180px;
   margin-top: 60px;
-  width: calc(100vw - 150px);
+  justify-items: center;
 }
 
 .infoContainer {
+  justify-self: start;
   max-width: 500px;
   height: 100%;
 }
 
-.slogan {
+.sloganTitle {
   font-family: var(--primary-font);
   font-size: 3.8rem;
   color: var(--very-dark-violet);
 }
 
-.infoDescription {
+.sloganDescription {
   font-family: var(--primary-font);
   font-size: 0.9rem;
   grid-column: 1/2;
@@ -40,4 +43,51 @@
   grid-column: 2/2;
   margin-right: -60px;
   max-height: 400px;
+}
+
+.advancedContainer {
+  position: absolute;
+  box-sizing: border-box;
+  background-color: #f0f1f6;
+  margin-top: -65px;
+  z-index: 1;
+  width: 100%;
+}
+
+.advancedTitle {
+  font-family: var(--primary-font);
+  color: var(--very-dark-violet);
+  margin-top: 180px;
+  text-align: center;
+}
+
+.advancedDescription {
+  width: 470px;
+  margin: 0 auto;
+  font-family: var(--primary-font);
+  color: var(--grayish-violet);
+  text-align: center;
+  margin-top: 8px;
+}
+
+.containerDetails {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  height: 100%;
+  position: relative;
+  margin: 0 180px;
+  margin-top: 90px;
+  padding-bottom: 30px;
+}
+
+.afterElement {
+  position: absolute;
+  display: block;
+  background-color: var(--cyan);
+  width: calc(100% - 10px);
+  bottom: 45%;
+  z-index: -3;
+  height: 10px;
 }

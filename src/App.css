@@ -16,9 +16,3 @@
   --very-dark-blue: hsl(255, 11%, 22%);
   --very-dark-violet: hsl(260, 8%, 14%);
 }
-
-.contentLimit {
-  max-width: 1440px;
-  padding: 0 150px;
-  margin: 0 auto;
-}
