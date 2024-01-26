@@ -1,0 +1,10 @@
+.getStarted {
+  border: none;
+  background-color: var(--cyan);
+  font-family: var(--primary-font);
+  font-weight: 700;
+  color: white;
+  margin-top: 20px;
+  padding: 7px 25px;
+  border-radius: 20px;
+}

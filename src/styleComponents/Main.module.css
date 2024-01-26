@@ -27,17 +27,6 @@
   color: var(--grayish-violet);
 }
 
-.getStarted {
-  border: none;
-  background-color: var(--cyan);
-  font-family: var(--primary-font);
-  font-weight: 700;
-  color: white;
-  margin-top: 20px;
-  padding: 7px 25px;
-  border-radius: 20px;
-}
-
 .imageWorking {
   justify-self: end;
   grid-column: 2/2;
@@ -46,11 +35,10 @@
 }
 
 .advancedContainer {
-  position: absolute;
+  padding-top: 20px;
   box-sizing: border-box;
   background-color: #f0f1f6;
   margin-top: -65px;
-  z-index: 1;
   width: 100%;
 }
 
@@ -78,8 +66,7 @@
   height: 100%;
   position: relative;
   margin: 0 180px;
-  margin-top: 90px;
-  padding-bottom: 30px;
+  padding-bottom: 120px;
 }
 
 .afterElement {
@@ -88,6 +75,5 @@
   background-color: var(--cyan);
   width: calc(100% - 10px);
   bottom: 45%;
-  z-index: -3;
   height: 10px;
 }
