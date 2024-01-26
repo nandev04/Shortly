@@ -48,14 +48,3 @@
   font-family: var(--primary-font);
   color: var(--grayish-violet);
 }
-
-.buttonLink {
-  box-sizing: border-box;
-  color: white;
-  font-family: var(--primary-font);
-  font-weight: 700;
-  background-color: var(--cyan);
-  border: none;
-  border-radius: 5px;
-  padding: 0 20px;
-}

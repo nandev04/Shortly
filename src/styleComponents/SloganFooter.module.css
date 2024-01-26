@@ -13,4 +13,9 @@
 .sloganTitle {
   font-family: var(--primary-font);
   font-size: 1.7rem;
+  margin-bottom: 15px;
+}
+
+.button {
+  width: 300px;
 }

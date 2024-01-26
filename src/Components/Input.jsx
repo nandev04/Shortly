@@ -1,5 +1,6 @@
 import React from 'react';
 import style from '../styleComponents/Input.module.css';
+import Button from './Button';
 
 const Input = () => {
   return (
@@ -11,7 +12,7 @@ const Input = () => {
             className={style.inputLink}
             placeholder="Shorten a link here..."
           />
-          <button className={style.buttonLink}>Shorten It!</button>
+          <Button title={'Shorten It!'} border={`${5}px`} />
         </div>
       </div>
     </div>

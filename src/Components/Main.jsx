@@ -11,7 +11,7 @@ import fully_customizable from '../assets/images/icon-fully-customizable.svg';
 import Input from './Input';
 import DetailsStatistics from './DetailsStatistics';
 import SloganFooter from './sloganFooter';
-import GetStartedButton from './GetStartedButton';
+import Button from './Button';
 
 const Main = () => {
   return (
@@ -23,7 +23,7 @@ const Main = () => {
             Build your brand's recognition and get detailed insights on how your
             links are performing.
           </p>
-          <GetStartedButton />
+          <Button title={'Get Started'} border={`${20}px`} />
         </section>
         {/* <img
           className={style.imageWorking}
