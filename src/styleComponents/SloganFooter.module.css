@@ -1,0 +1,21 @@
+.sloganContainer {
+  box-sizing: border-box;
+  width: 100%;
+  background: url('../assets/images/wave.svg') no-repeat center;
+  background-size: 100%;
+  background-position: bottom;
+  background-color: #4a406b;
+  color: #fff;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.sloganTitle {
+  font-family: var(--primary-font);
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+}
+
+.button {
+  width: 300px;
+}

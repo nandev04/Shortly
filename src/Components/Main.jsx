@@ -10,6 +10,8 @@ import fully_customizable from '../assets/images/icon-fully-customizable.svg';
 //Components
 import Input from './Input';
 import DetailsStatistics from './DetailsStatistics';
+import SloganFooter from './sloganFooter';
+import Button from './Button';
 
 const Main = () => {
   return (
@@ -21,7 +23,7 @@ const Main = () => {
             Build your brand's recognition and get detailed insights on how your
             links are performing.
           </p>
-          <button className={style.getStarted}>Get Started</button>
+          <Button title={'Get Started'} border={`${20}px`} large={true} />
         </section>
         {/* <img
           className={style.imageWorking}
@@ -68,6 +70,7 @@ const Main = () => {
           />
         </div>
       </div>
+      <SloganFooter />
     </>
   );
 };

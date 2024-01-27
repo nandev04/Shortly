@@ -1,5 +1,6 @@
 import React from 'react';
 import style from '../styleComponents/Header.module.css';
+import Button from './Button';
 
 const Header = () => {
   return (
@@ -14,7 +15,7 @@ const Header = () => {
       </div>
       <div>
         <button className={style.login}>Login</button>
-        <button className={style.SignUp}>Sign Up</button>
+        <Button title={'Sign Up'} border={`${20}px`} />
       </div>
     </header>
   );
