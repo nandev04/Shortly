@@ -10,6 +10,7 @@ const SloganFooter = () => {
         className={style.button}
         title={'Get Started'}
         border={`${20}px`}
+        large={true}
       />
     </div>
   );

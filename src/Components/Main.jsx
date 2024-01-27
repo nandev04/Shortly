@@ -23,7 +23,7 @@ const Main = () => {
             Build your brand's recognition and get detailed insights on how your
             links are performing.
           </p>
-          <Button title={'Get Started'} border={`${20}px`} />
+          <Button title={'Get Started'} border={`${20}px`} large={true} />
         </section>
         {/* <img
           className={style.imageWorking}
