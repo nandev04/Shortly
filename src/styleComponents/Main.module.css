@@ -2,7 +2,6 @@
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 1440px;
   margin: 0 180px;
   margin-top: 60px;
   justify-items: center;
