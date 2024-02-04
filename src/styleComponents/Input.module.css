@@ -48,3 +48,40 @@
   font-family: var(--primary-font);
   color: var(--grayish-violet);
 }
+
+:global(.containerLinks) {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+}
+
+.box {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 90px;
+  border-radius: 8px;
+}
+
+.url {
+  display: inline-block;
+  margin-right: 60px;
+  font-size: 0.9rem;
+  font-family: var(--primary-font);
+}
+
+.tinyUrl {
+  display: inline-block;
+  color: #40c3c1;
+  font-size: 0.9rem;
+  font-family: var(--primary-font);
+  margin-right: 20px;
+}
+
+.button {
+  display: inline-block;
+}

@@ -35,10 +35,21 @@
 }
 
 .advancedContainer {
-  padding-top: 20px;
+  box-sizing: border-box;
+  display: grid;
+  justify-items: center;
+  padding-top: 1px;
   box-sizing: border-box;
   background-color: #f0f1f6;
+  justify-content: center;
+  padding: 0 180px;
   margin-top: -65px;
+  width: 100%;
+}
+
+.containerLinks {
+  display: grid;
+  justify-items: center;
   width: 100%;
 }
 

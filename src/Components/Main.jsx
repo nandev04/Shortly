@@ -11,9 +11,14 @@ import fully_customizable from '../assets/images/icon-fully-customizable.svg';
 import Input from './Input';
 import DetailsStatistics from './DetailsStatistics';
 import SloganFooter from './sloganFooter';
+import LinkBox from './LinkBox';
 import Button from './Button';
+import useFetch from '../customHooks/useFetch';
 
 const Main = () => {
+  const { itemLocalStorage } = useFetch();
+
+  console.log(itemLocalStorage);
   return (
     <>
       <div className={style.mainContainer}>
@@ -34,6 +39,14 @@ const Main = () => {
       </div>
 
       <div className={style.advancedContainer}>
+        {itemLocalStorage.length > 0 &&
+          itemLocalStorage.map((array) => {
+            array.map((item) => {
+              <LinkBox url={item[0]} tinyUrl={item[1]} />;
+            });
+          })}
+        {/* FAZER A LÓGICA PARA CRIAR OS BOXES SE O ITEMLOCAL STORAGE EXISTIR */}
+
         <h1 className={style.advancedTitle}>Advanced Statistics</h1>
         <p className={style.advancedDescription}>
           Track how your links are performing across the web with our advanced
