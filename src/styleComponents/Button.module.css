@@ -5,4 +5,9 @@
   font-weight: 700;
   color: white;
   padding: 7px 25px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #9ce2e2;
 }

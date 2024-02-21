@@ -42,7 +42,7 @@
   box-sizing: border-box;
   background-color: #f0f1f6;
   justify-content: center;
-  padding: 0 180px;
+  padding: 65px 180px;
   margin-top: -65px;
   width: 100%;
 }
@@ -56,7 +56,7 @@
 .advancedTitle {
   font-family: var(--primary-font);
   color: var(--very-dark-violet);
-  margin-top: 180px;
+  margin-top: calc(115px + 65px);
   text-align: center;
 }
 
@@ -87,4 +87,94 @@
   width: calc(100% - 10px);
   bottom: 45%;
   height: 10px;
+}
+
+/* Input Styles */
+
+.generalContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 100%;
+  margin: auto 0;
+  margin-top: 60px;
+  grid-column: span 2;
+  box-sizing: border-box;
+}
+
+.wave {
+  position: relative;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: url('../assets/images/wave.svg') no-repeat center;
+  background-size: 100%;
+  background-position: bottom;
+  background-color: #4a406b;
+  max-width: 1000px;
+  width: 100%;
+  height: 130px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 60px;
+  z-index: 2;
+}
+
+.containerInput {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 20px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.inputLink {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.inputLink::placeholder {
+  font-family: var(--primary-font);
+  color: var(--grayish-violet);
+}
+
+:global(.containerLinks) {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+}
+
+.box {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 90px;
+  border-radius: 8px;
+}
+
+.url {
+  display: inline-block;
+  margin-right: 60px;
+  font-size: 0.9rem;
+  font-family: var(--primary-font);
+}
+
+.tinyUrl {
+  display: inline-block;
+  color: #40c3c1;
+  font-size: 0.9rem;
+  font-family: var(--primary-font);
+  margin-right: 20px;
+}
+
+.button {
+  display: inline-block;
 }

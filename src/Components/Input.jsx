@@ -1,5 +1,4 @@
-import React, { useMemo } from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react';
 import style from '../styleComponents/Input.module.css';
 import Button from './Button';
 import useFetch from '../customHooks/useFetch';
@@ -7,11 +6,24 @@ import useFetch from '../customHooks/useFetch';
 
 const Input = () => {
   const [inputState, setInputState] = React.useState('');
-  const { postFetch } = useFetch();
+  const [data, setData] = React.useState(null);
 
-  function createLink(event) {
+  async function createLink(event) {
     event.preventDefault();
-    postFetch('https://api.tinyurl.com/create', inputState);
+    const response = await fetch('https://api.tinyurl.com/create', {
+      method: 'POST',
+      headers: {
+        Authorization:
+          'Bearer 78IUTWMYCM3e1xlkKrVz03YZXUDO1ZUaLd44cbKYVz0GsOybORvy2PRQ14qL',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        url: inputState,
+      }),
+    });
+    const json = await response.json();
+    setData(json);
+    console.log(data);
   }
 
   return (
