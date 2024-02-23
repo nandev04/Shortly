@@ -8,12 +8,42 @@ import detailed_records from '../assets/images/icon-detailed-records.svg';
 import fully_customizable from '../assets/images/icon-fully-customizable.svg';
 
 //Components
-import Input from './Input';
 import DetailsStatistics from './DetailsStatistics';
 import SloganFooter from './sloganFooter';
+import LinkBox from './LinkBox';
 import Button from './Button';
 
 const Main = () => {
+  const [inputState, setInputState] = React.useState('');
+  const [error, setError] = React.useState(null);
+  const [data, setData] = React.useState([]);
+
+  async function createLink(event) {
+    try {
+      event.preventDefault();
+      const response = await fetch('https://api.tinyurl.com/create', {
+        method: 'POST',
+        headers: {
+          Authorization:
+            'Bearer 78IUTWMYCM3e1xlkKrVz03YZXUDO1ZUaLd44cbKYVz0GsOybORvy2PRQ14qL',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: inputState,
+        }),
+      });
+      const json = await response.json();
+      console.log(json);
+      setData([...data, json]);
+    } catch {
+      setError(true);
+      setData(null);
+    } finally {
+    }
+  }
+
+  console.log(data);
+
   return (
     <>
       <div className={style.mainContainer}>
@@ -30,10 +60,30 @@ const Main = () => {
           src={workingImage}
           alt="Imagem ilustrativa de um homem trabalhando"
         /> */}
-        <Input />
+        <div className={style.generalContainer}>
+          <div className={style.wave}>
+            <form className={style.containerInput} onSubmit={createLink}>
+              <input
+                type="text"
+                className={style.inputLink}
+                placeholder="Shorten a link here..."
+                onChange={({ target }) => setInputState(target.value)}
+              />
+              <Button title={'Shorten It!'} border={`${7}px`} />
+            </form>
+          </div>
+        </div>
       </div>
 
       <div className={style.advancedContainer}>
+        {data.length > 0 &&
+          data.map((obj) => (
+            <LinkBox
+              key={obj.data.url}
+              url={obj.data.url}
+              tinyUrl={obj.data.tiny_url}
+            />
+          ))}
         <h1 className={style.advancedTitle}>Advanced Statistics</h1>
         <p className={style.advancedDescription}>
           Track how your links are performing across the web with our advanced
