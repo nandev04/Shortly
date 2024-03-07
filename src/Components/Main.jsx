@@ -16,29 +16,34 @@ import Button from './Button';
 const Main = () => {
   const [inputState, setInputState] = React.useState('');
   const [error, setError] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
   const [data, setData] = React.useState([]);
 
   async function createLink(event) {
-    try {
-      event.preventDefault();
-      const response = await fetch('https://api.tinyurl.com/create', {
-        method: 'POST',
-        headers: {
-          Authorization:
-            'Bearer 78IUTWMYCM3e1xlkKrVz03YZXUDO1ZUaLd44cbKYVz0GsOybORvy2PRQ14qL',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          url: inputState,
-        }),
-      });
-      const json = await response.json();
-      console.log(json);
-      setData([...data, json]);
-    } catch {
-      setError(true);
-      setData(null);
-    } finally {
+    event.preventDefault();
+    if (inputState.length > 0) {
+      try {
+        setLoading(true);
+        const response = await fetch('https://api.tinyurl.com/create', {
+          method: 'POST',
+          headers: {
+            Authorization:
+              'Bearer 78IUTWMYCM3e1xlkKrVz03YZXUDO1ZUaLd44cbKYVz0GsOybORvy2PRQ14qL',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            url: inputState,
+          }),
+        });
+        const json = await response.json();
+        console.log(json);
+        setData([...data, json]);
+      } catch {
+        setError(true);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
     }
   }
 
@@ -69,7 +74,11 @@ const Main = () => {
                 placeholder="Shorten a link here..."
                 onChange={({ target }) => setInputState(target.value)}
               />
-              <Button title={'Shorten It!'} border={`${7}px`} />
+              <Button
+                title={'Shorten It!'}
+                border={`${7}px`}
+                loading={loading}
+              />
             </form>
           </div>
         </div>
