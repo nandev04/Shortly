@@ -15,34 +15,63 @@ import Button from './Button';
 
 const Main = () => {
   const [inputState, setInputState] = React.useState('');
+  const [errorValidate, setErrorValidate] = React.useState(null);
+
   const [error, setError] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
   const [data, setData] = React.useState([]);
 
-  async function createLink(event) {
-    try {
-      event.preventDefault();
-      const response = await fetch('https://api.tinyurl.com/create', {
-        method: 'POST',
-        headers: {
-          Authorization:
-            'Bearer 78IUTWMYCM3e1xlkKrVz03YZXUDO1ZUaLd44cbKYVz0GsOybORvy2PRQ14qL',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          url: inputState,
-        }),
-      });
-      const json = await response.json();
-      console.log(json);
-      setData([...data, json]);
-    } catch {
-      setError(true);
-      setData(null);
-    } finally {
+  function validateInput(event) {
+    const regex = /^(https?|ftp):\/\/[^\s\/$.?#].[^\s]*$/;
+    const input = document.querySelector('.input');
+
+    if (regex.test(event.target.value)) {
+      setErrorValidate(null);
+      setInputState(event.target.value);
+      input.style.border = '';
+    } else {
+      input.style.border = '2px solid red';
+      setErrorValidate('Insira uma URL válida.');
     }
   }
 
-  console.log(data);
+  const [equal, setEqual] = React.useState(false);
+
+  React.useEffect(() => {
+    data.map((obj) => {
+      setEqual(obj.data.url == inputState ? true : false);
+    });
+  }, [data, inputState]);
+
+  async function createLink(event) {
+    event.preventDefault();
+
+    if (inputState.length > 0 && !equal) {
+      try {
+        setLoading(true);
+        const response = await fetch('https://api.tinyurl.com/create', {
+          method: 'POST',
+          headers: {
+            Authorization:
+              'Bearer 78IUTWMYCM3e1xlkKrVz03YZXUDO1ZUaLd44cbKYVz0GsOybORvy2PRQ14qL',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            url: inputState,
+          }),
+        });
+        const json = await response.json();
+        setData([...data, json]);
+      } catch {
+        setError(true);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      setErrorValidate('Link já encurtado!');
+    }
+  }
 
   return (
     <>
@@ -62,15 +91,40 @@ const Main = () => {
         /> */}
         <div className={style.generalContainer}>
           <div className={style.wave}>
-            <form className={style.containerInput} onSubmit={createLink}>
+            <form
+              className={style.containerInput + ' form'}
+              onSubmit={createLink}
+            >
               <input
                 type="text"
-                className={style.inputLink}
+                className={style.inputLink + ' input'}
                 placeholder="Shorten a link here..."
-                onChange={({ target }) => setInputState(target.value)}
+                onChange={validateInput}
               />
-              <Button title={'Shorten It!'} border={`${7}px`} />
+              <Button
+                title={'Shorten It!'}
+                border={`${7}px`}
+                loading={loading}
+              />
             </form>
+            {errorValidate && (
+              <p
+                style={{
+                  display: 'inline',
+                  color: 'red',
+                  position: 'absolute',
+                  bottom: '15px',
+                  left: '0px',
+                  marginLeft: '60px',
+                  fontFamily: 'Poppins, sans-serif',
+                  fontSize: '.85rem',
+                  fontWeight: 500,
+                  textShadow: `2px 1px 1px #000`,
+                }}
+              >
+                {errorValidate}
+              </p>
+            )}
           </div>
         </div>
       </div>
