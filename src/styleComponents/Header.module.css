@@ -1,4 +1,4 @@
-.header {
+.menu {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -48,4 +48,129 @@
   background-color: var(--cyan);
   padding: 10px;
   border-radius: 20px;
+}
+
+/* --------------------------- MENU TOGGLE --------------------------- */
+
+.menuToggle {
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin: 0 180px;
+  align-items: center;
+}
+
+.gripPosition {
+  position: relative;
+}
+
+.dropMenuButton {
+  position: relative;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.dropMenuButton::before {
+  position: relative;
+  z-index: 999;
+  margin-right: 4px;
+  content: '';
+  display: inline-block;
+  height: 3px;
+  width: 30px;
+  background: #9896a2;
+  box-shadow: 0 8px #9896a2, 0 -8px #9896a2;
+}
+
+.dropMenuButton:hover::before {
+  background: #4a406b;
+  box-shadow: 0 8px #4a406b, 0 -8px #4a406b;
+}
+
+.navigationButtonsMenu {
+  position: absolute;
+  top: 30px;
+  right: -10px;
+  display: none;
+  background-color: #3a3053;
+  text-align: center;
+  padding: 30px 30px;
+  border-radius: 5px;
+  margin-top: -40px;
+  width: 130px;
+  height: 180px;
+  z-index: 200;
+}
+
+.navigationButtonsMenu > li,
+.loginMenu {
+  cursor: pointer;
+  display: block;
+  color: white;
+  border: none;
+  font-family: var(--primary-font);
+  background-color: transparent;
+  font-size: 1rem;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 7px;
+}
+
+.loginMenu {
+  cursor: pointer;
+}
+
+.loginMenu:hover {
+  color: #4a406b;
+}
+
+.signUp {
+  cursor: pointer;
+  display: block;
+  color: white;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 5px;
+  margin: 0 auto;
+  margin-bottom: 7px;
+  background-color: #2acfcf;
+  border: none;
+  border-radius: 8px;
+}
+
+@keyframes show-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 1025px) {
+  .menu {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .logoSite {
+    display: block;
+  }
+
+  :global(.activeDrop) {
+    display: block;
+    animation: show-up 0.3s forwards;
+  }
 }
