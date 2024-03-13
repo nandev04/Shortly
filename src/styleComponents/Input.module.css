@@ -30,6 +30,7 @@
 
 .containerInput {
   display: grid;
+  background-color: red;
   grid-template-columns: 4fr 1fr;
   gap: 20px;
   box-sizing: border-box;

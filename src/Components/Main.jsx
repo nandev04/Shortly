@@ -108,22 +108,7 @@ const Main = () => {
               />
             </form>
             {errorValidate && (
-              <p
-                style={{
-                  display: 'inline',
-                  color: 'red',
-                  position: 'absolute',
-                  bottom: '15px',
-                  left: '0px',
-                  marginLeft: '60px',
-                  fontFamily: 'Poppins, sans-serif',
-                  fontSize: '.85rem',
-                  fontWeight: 500,
-                  textShadow: `2px 1px 1px #000`,
-                }}
-              >
-                {errorValidate}
-              </p>
+              <p className={style.errorValidate}>{errorValidate}</p>
             )}
           </div>
         </div>
