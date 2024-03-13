@@ -35,3 +35,22 @@
   padding: 20px 0;
   height: 100%;
 }
+
+@media (max-width: 670px) {
+  .containerDetailsStatistics {
+    margin-bottom: 70px;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .imageContainer {
+    justify-self: center;
+    margin: 0;
+  }
+}

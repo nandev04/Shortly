@@ -178,3 +178,36 @@
 .button {
   display: inline-block;
 }
+
+.containerDetailsMobile {
+  box-sizing: border-box;
+  display: none;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  height: 100%;
+  position: relative;
+  margin: 0 180px;
+  padding-bottom: 120px;
+}
+
+@media (max-width: 670px) {
+  .containerDetails {
+    display: none;
+    text-align: center;
+  }
+
+  .containerDetailsMobile {
+    display: grid;
+    align-self: center;
+    margin: 0 80px;
+    margin-top: 200px;
+  }
+
+  .afterElement {
+    justify-self: center;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    width: 900px;
+    height: 10px;
+  }
+}
