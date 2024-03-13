@@ -53,6 +53,7 @@
 /* --------------------------- MENU TOGGLE --------------------------- */
 
 .menuToggle {
+  display: none;
   box-sizing: border-box;
   justify-content: space-between;
   padding: 20px 0;
