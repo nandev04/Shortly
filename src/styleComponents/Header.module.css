@@ -175,3 +175,9 @@
     animation: show-up 0.3s forwards;
   }
 }
+
+@media (max-width: 870px) {
+  .menuToggle {
+    margin: 0 60px;
+  }
+}

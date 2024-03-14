@@ -3,6 +3,16 @@ import style from '../styleComponents/Header.module.css';
 import Button from './Button';
 
 const Header = () => {
+  React.useCallback(() => {
+    document.addEventListener('click', ({ target }) => {
+      const btn = document.querySelector('.btn');
+      const listMenu = document.querySelector('.dropMenu');
+      if (!listMenu.contains(target) && target !== btn) {
+        listMenu.classList.remove('activeDrop');
+      }
+    });
+  }, []);
+
   return (
     <header className={style.header}>
       <div className={style.menu}>
