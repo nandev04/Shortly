@@ -70,3 +70,37 @@
     margin-bottom: 20px;
   }
 }
+
+@media (max-width: 950px) {
+  .contentFooter {
+    display: grid;
+    row-gap: 50px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logoSite {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  .contentFooter > div {
+    padding-right: 0;
+  }
+
+  .topicTitle {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+
+  .socials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .socials > a > img {
+    display: block;
+    margin: 0;
+  }
+}

@@ -108,22 +108,7 @@ const Main = () => {
               />
             </form>
             {errorValidate && (
-              <p
-                style={{
-                  display: 'inline',
-                  color: 'red',
-                  position: 'absolute',
-                  bottom: '15px',
-                  left: '0px',
-                  marginLeft: '60px',
-                  fontFamily: 'Poppins, sans-serif',
-                  fontSize: '.85rem',
-                  fontWeight: 500,
-                  textShadow: `2px 1px 1px #000`,
-                }}
-              >
-                {errorValidate}
-              </p>
+              <p className={style.errorValidate}>{errorValidate}</p>
             )}
           </div>
         </div>
@@ -168,6 +153,34 @@ const Main = () => {
             altImg={'Fully Customizable icon'}
             title={'Fully Customizable'}
             degrade={200}
+            description={
+              'Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.'
+            }
+          />
+        </div>
+
+        <div className={style.containerDetailsMobile}>
+          <span className={style.afterElement}></span>
+          <DetailsStatistics
+            image={brand_recognition}
+            altImg={'Brand Recognition icon'}
+            title={'Brand Recognition'}
+            description={
+              "Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content."
+            }
+          />
+          <DetailsStatistics
+            image={detailed_records}
+            altImg={'Detailed Records icon'}
+            title={'Detailed Records'}
+            description={
+              'Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.'
+            }
+          />
+          <DetailsStatistics
+            image={fully_customizable}
+            altImg={'Fully Customizable icon'}
+            title={'Fully Customizable'}
             description={
               'Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.'
             }
