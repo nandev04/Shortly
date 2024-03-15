@@ -83,7 +83,7 @@
   display: block;
   background-color: var(--cyan);
   width: calc(100% - 10px);
-  bottom: 45%;
+  bottom: 55%;
   height: 10px;
 }
 
