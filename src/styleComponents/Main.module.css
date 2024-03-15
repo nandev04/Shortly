@@ -45,6 +45,10 @@
   max-width: 100%;
 }
 
+.ContainerGeral {
+  width: calc(100% - 360px);
+}
+
 .containerLinks {
   display: grid;
   justify-items: center;

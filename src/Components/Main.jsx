@@ -15,7 +15,6 @@ import Button from './Button';
 
 const Main = () => {
   const [inputState, setInputState] = React.useState('');
-  const [errorValidate, setErrorValidate] = React.useState(null);
 
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
@@ -53,8 +52,7 @@ const Main = () => {
           const response = await fetch('https://api.tinyurl.com/create', {
             method: 'POST',
             headers: {
-              Authorization:
-                'Bearer 78IUTWMYCM3e1xlkKrVz03YZXUDO1ZUaLd44cbKYVz0GsOybORvy2PRQ14qL',
+              Authorization: process.env.REACT_APP_API_AUTHORIZATION,
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({

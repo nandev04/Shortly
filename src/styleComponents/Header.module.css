@@ -9,6 +9,7 @@
 
 .navigation {
   display: flex;
+  margin-right: auto;
   align-items: center;
 }
 
