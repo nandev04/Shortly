@@ -26,12 +26,12 @@ const Main = () => {
     const input = document.querySelector('.input');
 
     if (regex.test(event.target.value)) {
-      setErrorValidate(null);
+      setError(null);
       setInputState(event.target.value);
       input.style.border = '';
     } else {
       input.style.border = '2px solid red';
-      setErrorValidate('Insira uma URL válida.');
+      setError('Insira uma URL válida.');
     }
   }
 
@@ -46,30 +46,34 @@ const Main = () => {
   async function createLink(event) {
     event.preventDefault();
 
-    if (inputState.length > 0 && !equal) {
-      try {
-        setLoading(true);
-        const response = await fetch('https://api.tinyurl.com/create', {
-          method: 'POST',
-          headers: {
-            Authorization:
-              'Bearer 78IUTWMYCM3e1xlkKrVz03YZXUDO1ZUaLd44cbKYVz0GsOybORvy2PRQ14qL',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            url: inputState,
-          }),
-        });
-        const json = await response.json();
-        setData([...data, json]);
-      } catch {
-        setError(true);
-        setData(null);
-      } finally {
-        setLoading(false);
+    if (inputState.length > 0) {
+      if (!equal) {
+        try {
+          setLoading(true);
+          const response = await fetch('https://api.tinyurl.com/create', {
+            method: 'POST',
+            headers: {
+              Authorization:
+                'Bearer 78IUTWMYCM3e1xlkKrVz03YZXUDO1ZUaLd44cbKYVz0GsOybORvy2PRQ14qL',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              url: inputState,
+            }),
+          });
+          const json = await response.json();
+          setData([...data, json]);
+        } catch {
+          setError('Ocorreu um erro ao encurtar o link!');
+          setData(null);
+        } finally {
+          setLoading(false);
+        }
+      } else {
+        setError('Link já encurtado!');
       }
     } else {
-      setErrorValidate('Link já encurtado!');
+      setError('Insira um link válido!');
     }
   }
 
@@ -107,9 +111,7 @@ const Main = () => {
                 loading={loading}
               />
             </form>
-            {errorValidate && (
-              <p className={style.errorValidate}>{errorValidate}</p>
-            )}
+            {error && <p className={style.errorValidate}>{error}</p>}
           </div>
         </div>
       </div>
