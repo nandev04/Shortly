@@ -45,6 +45,10 @@
   max-width: 100%;
 }
 
+.ContainerGeral {
+  width: calc(100% - 360px);
+}
+
 .containerLinks {
   display: grid;
   justify-items: center;
@@ -74,7 +78,7 @@
   gap: 30px;
   height: 100%;
   position: relative;
-  margin: 0 180px;
+  margin: 0 auto;
   padding-bottom: 120px;
 }
 
@@ -83,7 +87,7 @@
   display: block;
   background-color: var(--cyan);
   width: calc(100% - 10px);
-  bottom: 45%;
+  bottom: 55%;
   height: 10px;
 }
 
@@ -201,7 +205,7 @@
   padding-bottom: 120px;
 }
 
-@media (max-width: 670px) {
+@media (max-width: 720px) {
   .containerDetails {
     display: none;
     text-align: center;
@@ -245,6 +249,7 @@
 
   .wave {
     padding: 20px 30px;
+
     height: auto;
   }
 
