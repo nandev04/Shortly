@@ -11,6 +11,7 @@
 }
 
 .imageContainer {
+  display: grid;
   position: absolute;
   top: -35px;
   width: 40px;
@@ -18,6 +19,8 @@
   background-color: var(--dark-violet);
   border-radius: 50%;
   padding: 15px;
+  justify-content: center;
+  align-content: center;
   overflow: hidden;
   margin-left: 25px;
 }
@@ -36,7 +39,7 @@
   height: 100%;
 }
 
-@media (max-width: 670px) {
+@media (max-width: 720px) {
   .containerDetailsStatistics {
     margin-bottom: 70px;
   }

@@ -7,6 +7,10 @@ p {
   padding: 0;
 }
 
+#root {
+  width: 100%;
+}
+
 ul,
 li {
   list-style-type: none;

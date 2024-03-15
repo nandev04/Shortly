@@ -264,3 +264,9 @@
     width: 300px;
   }
 }
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}

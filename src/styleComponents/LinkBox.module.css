@@ -53,3 +53,14 @@
 .active:hover {
   background-color: #372f54;
 }
+
+@media (max-width: 1000px) {
+  .box {
+    margin: 0 60px;
+    margin-top: 20px;
+  }
+
+  .url {
+    display: block;
+  }
+}
