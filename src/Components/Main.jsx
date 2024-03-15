@@ -187,6 +187,7 @@ const Main = () => {
           />
         </div>
       </div>
+
       <SloganFooter />
     </>
   );

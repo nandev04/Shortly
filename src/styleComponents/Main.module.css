@@ -78,7 +78,7 @@
   gap: 30px;
   height: 100%;
   position: relative;
-  margin: 0 180px;
+  margin: 0 auto;
   padding-bottom: 120px;
 }
 
@@ -205,7 +205,7 @@
   padding-bottom: 120px;
 }
 
-@media (max-width: 670px) {
+@media (max-width: 720px) {
   .containerDetails {
     display: none;
     text-align: center;
@@ -249,6 +249,7 @@
 
   .wave {
     padding: 20px 30px;
+
     height: auto;
   }
 
@@ -262,4 +263,10 @@
   .advancedDescription {
     width: 300px;
   }
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
 }
