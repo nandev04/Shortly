@@ -12,6 +12,7 @@ apis.token
 notationNextDay
 dist
 dist-ssr
+.env
 *.local
 
 # Editor directories and files
@@ -24,4 +25,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.env
+
