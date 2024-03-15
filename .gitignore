@@ -12,7 +12,7 @@ apis.token
 notationNextDay
 dist
 dist-ssr
-.env
+*.env
 *.local
 
 # Editor directories and files
