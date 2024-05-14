@@ -94,7 +94,6 @@
 /* Input Styles */
 
 .generalContainer {
-  display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
   width: 100%;
@@ -205,25 +204,10 @@
   padding-bottom: 120px;
 }
 
-@media (max-width: 720px) {
-  .containerDetails {
-    display: none;
-    text-align: center;
-  }
-
-  .containerDetailsMobile {
-    display: grid;
-    align-self: center;
-    margin: 0 80px;
-    margin-top: 200px;
-  }
-
-  .afterElement {
-    justify-self: center;
-    transform: rotate(-90deg);
-    transform-origin: center;
-    width: 1100px;
-    height: 10px;
+@media (max-width: 1140px) {
+  .imageWorking {
+    width: 400px;
+    height: auto;
   }
 }
 
@@ -269,4 +253,85 @@
   content: '';
   display: table;
   clear: both;
+}
+
+@media (max-width: 720px) {
+  .containerDetails {
+    display: none;
+    text-align: center;
+  }
+
+  .containerDetailsMobile {
+    display: grid;
+    align-self: center;
+    margin: 0 80px;
+    margin-top: 200px;
+  }
+
+  .afterElement {
+    justify-self: center;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    width: 1100px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 630px) {
+  .mainContainer {
+    margin: 0 20px;
+    display: grid;
+    row-gap: 40px;
+  }
+
+  .imageWorking {
+    grid-row: 1;
+    grid-column: span 2;
+    justify-self: center;
+    margin: 0;
+    /* width: 300px; */
+  }
+}
+
+@media (max-width: 440px) {
+  .imageWorking {
+    width: 300px;
+  }
+}
+
+@media (max-width: 370px) {
+  .sloganTitle {
+    font-size: 2rem;
+  }
+
+  .advancedTitle {
+    font-size: 1.5rem;
+    margin-top: 120px;
+  }
+
+  .advancedDescription {
+    padding-top: 20px;
+  }
+
+  .advancedContainer {
+    padding: 20px;
+  }
+
+  .imageWorking {
+    width: 200px;
+  }
+
+  .inputLink {
+    padding: 10px;
+  }
+
+  .containerDetailsMobile {
+    margin: 0 20px;
+    margin-top: 200px;
+  }
+
+  .advancedDescription {
+    width: auto;
+    margin: 0 20px;
+  }
 }
