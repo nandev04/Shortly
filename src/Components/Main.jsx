@@ -52,18 +52,21 @@ const Main = () => {
           const response = await fetch('https://api.tinyurl.com/create', {
             method: 'POST',
             headers: {
-              Authorization: process.env.REACT_APP_API_AUTHORIZATION,
+              Authorization:
+                'Bearer sfskzVcJA4TvGd0lZAd2arSmPLBaPIkmtcKKb2KvCAJR1VFrVRxDZYBTf9NC',
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
               url: inputState,
             }),
           });
+          if (!response.ok)
+            throw new Error('Ocorreu um erro ao encurtar o link!');
           const json = await response.json();
           setData([...data, json]);
-        } catch {
-          setError('Ocorreu um erro ao encurtar o link!');
-          setData(null);
+        } catch (err) {
+          setError(err);
+          setData([]);
         } finally {
           setLoading(false);
         }
@@ -86,11 +89,11 @@ const Main = () => {
           </p>
           <Button title={'Get Started'} border={`${20}px`} large={true} />
         </section>
-        {/* <img
+        <img
           className={style.imageWorking}
           src={workingImage}
           alt="Imagem ilustrativa de um homem trabalhando"
-        /> */}
+        />
         <div className={style.generalContainer}>
           <div className={style.wave}>
             <form

@@ -19,3 +19,9 @@
 .button {
   width: 300px;
 }
+
+@media (max-width: 360px) {
+  .sloganTitle {
+    font-size: 1.4rem;
+  }
+}

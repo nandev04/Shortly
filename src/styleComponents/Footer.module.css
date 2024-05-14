@@ -104,3 +104,9 @@
     margin: 0;
   }
 }
+
+@media (max-width: 360px) {
+  .contentFooter {
+    margin: 0 auto;
+  }
+}
